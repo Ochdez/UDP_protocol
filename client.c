@@ -20,6 +20,7 @@ int main(int argc, char **argv)
     //int port = atoi(argv[1]);
     char mesage[1024];
     int i;
+    //Guarda el mensaje del cliente escrito en la consola
     for (i = 1; i < argc; i++)
     {
         strcat(mesage, argv[i]);

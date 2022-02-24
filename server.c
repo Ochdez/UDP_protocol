@@ -36,13 +36,14 @@ int main(int argc, char **argv)
     }
 
     memset(&server_addr, '\0', sizeof(server_addr) );
-    server_addr.sin_family = AF_INET;
+    server_addr.sin_family = AF_INET; //Determina que se trata de un protocolo UDP
     server_addr.sin_port = htons(12345);  //12345 para aceptar cualquier puerto
     //server_addr.sin_addr.s_addr = inet_addr(ip); Para especficar que ip será aceptada
-    server_addr.sin_addr.s_addr =INADDR_ANY;
+    server_addr.sin_addr.s_addr = INADDR_ANY; //indica que aceptará cualquier ip
 
     //Guarda la dirección ip del servidor en servaddr (info de las tres lineas anteriores)
     n = bind(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr));
+    
     if(n < 0)
     {
         perror("BIND error");
