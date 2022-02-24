@@ -41,7 +41,7 @@ int main(int argc, char **argv)
     //server_addr.sin_addr.s_addr = inet_addr(ip); Para especficar que ip será aceptada
     server_addr.sin_addr.s_addr =INADDR_ANY;
 
-    //Guarda la dirección ip del servidor en servaddr (indo de las tres lineas anteriores)
+    //Guarda la dirección ip del servidor en servaddr (info de las tres lineas anteriores)
     n = bind(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr));
     if(n < 0)
     {
